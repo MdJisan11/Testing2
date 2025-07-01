@@ -6,19 +6,12 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  /*   
-        Purple: hsl(250, 66%, 75%)
-        Blue: hsl(207, 90%, 72%)
-        Pink: hsl(356, 66%, 75%)
-        Teal: hsl(174, 63%, 62%)
-  */
-  --first-hue: 250;
-  --sat: 66%;
-  --lig: 75%;
+  --first-hue: 174;
+  --sat: 63%;
+  --lig: 62%;
   --second-hue: 219;
-  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
-  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
+  --first-color: #00E8FF;
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 58%);
   --title-color: hsl(var(--second-hue), 15%, 95%);
   --text-color: hsl(var(--second-hue), 8%, 75%);
   --text-color-light: hsl(var(--second-hue), 4%, 55%);
@@ -26,7 +19,6 @@
   --container-color: hsl(var(--second-hue), 32%, 12%);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --biggest-font-size: 1.75rem;
   --h1-font-size: 1.5rem;
@@ -82,7 +74,7 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: 0.4s; /* for light mode animation */
+  transition: 0.4s;
 }
 
 h1,
@@ -122,7 +114,7 @@ img {
   color: var(--first-color);
 }
 
-/*========== Variables light theme ==========*/
+/* Light theme */
 body.light-theme {
   --title-color: hsl(var(--second-hue), 15%, 15%);
   --text-color: hsl(var(--second-hue), 8%, 35%);
@@ -130,10 +122,7 @@ body.light-theme {
   --container-color: #e9e9e9;
 }
 
-/*========== 
-    Color changes in some parts of 
-    the website, in light theme
-==========*/
+/* Light theme adjustments */
 .light-theme .scroll-header {
   box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.1);
 }
@@ -183,6 +172,7 @@ body.light-theme {
 .light-theme::-webkit-scrollbar {
   background-color: hsl(var(--second-hue), 8%, 80%);
 }
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 968px;
@@ -220,13 +210,12 @@ body.light-theme {
   color: var(--text-color-light);
 }
 
-/*=============== HEADER & NAV===============*/
+/*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  /* height: var(--header-height); */
   background-color: var(--body-color);
   z-index: var(--z-fixed);
   transition: 0.4s;
@@ -277,7 +266,6 @@ body.light-theme {
   border-radius: 5rem;
 }
 
-/* Active link */
 .active-link {
   background: linear-gradient(
     180deg,
@@ -286,11 +274,9 @@ body.light-theme {
   );
   box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.4);
   border-radius: 5rem;
-
   color: var(--title-color);
 }
 
-/* Change background header */
 .scroll-header {
   box-shadow: 0 4px 4px hsla(0, 0%, 4%, 0.3);
 }
@@ -341,7 +327,6 @@ body.light-theme {
     hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
     hsla(var(--first-hue), var(--sat), var(--lig), 0.1)
   );
-
   border-radius: 10rem 10rem 1rem 1rem;
   display: flex;
   align-items: flex-end;
@@ -566,7 +551,6 @@ body.light-theme {
   transition: 0.4s;
 }
 
-/* Services modal */
 .services__modal {
   position: fixed;
   inset: 0;
@@ -631,7 +615,6 @@ body.light-theme {
   color: var(--first-color);
   cursor: pointer;
 }
-/*Active modal*/
 
 .active-modal {
   visibility: visible;
@@ -639,7 +622,6 @@ body.light-theme {
 }
 
 /*=============== WORK ===============*/
-
 .work__container {
   padding-top: 1rem;
 }
@@ -696,7 +678,6 @@ body.light-theme {
   transition: 0.4s;
 }
 
-/* Active item work*/
 .active-work {
   background-color: var(--first-color);
   color: var(--body-color);
@@ -727,7 +708,6 @@ body.light-theme {
   margin-bottom: 0.15rem;
 }
 
-/* Swiper class */
 .swiper-pagination-bullet {
   background-color: var(--text-color-light);
 }
@@ -838,6 +818,7 @@ body.light-theme {
 .contact__form-area textarea {
   resize: none;
 }
+
 /*=============== FOOTER ===============*/
 .footer {
   background-color: var(--first-color);
@@ -1055,31 +1036,7 @@ body.light-theme {
   .contact__form {
     width: 340px;
   }
-  /* .contact__info {
-    grid-template-columns: 350px;
-    justify-content: center;
-  }
-
-  .contact__form {
-    width: 360px;
-    margin: 0 auto;
-  } */
 }
-
-/* @media screen and (min-width: 767px) {
-  /* .work__container {
-    grid-template-columns: repeat(2, max-content);
-  } */
-
-/* .contact__info {
-    grid-template-columns: 300px;
-  }
-
-  .contact__container {
-    grid-template-columns: repeat(2, 325px);
-    justify-content: center;
-  }
-} */
 
 /* For large devices */
 @media screen and (min-width: 992px) {
@@ -1122,4 +1079,72 @@ body.light-theme {
   }
 
   .about__container {
-    grid-template-co
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+  }
+
+  .about__img {
+    width: 350px;
+  }
+
+  .about__data {
+    text-align: initial;
+  }
+
+  .about__info {
+    justify-content: initial;
+  }
+
+  .about__box {
+    text-align: center;
+    padding: 1rem 1.25rem;
+  }
+
+  .about__description {
+    padding: 0 4rem 0 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .skills__container {
+    grid-template-columns: repeat(2, 350px);
+    column-gap: 3rem;
+  }
+
+  .services__container {
+    grid-template-columns: repeat(3, 192px);
+    column-gap: 3rem;
+  }
+
+  .services__card {
+    padding: 5rem 2rem 1.5rem;
+  }
+
+  .work__container {
+    grid-template-columns: repeat(3, max-content);
+    gap: 3rem;
+  }
+
+  .work__card {
+    padding: 1.25rem;
+  }
+
+  .work__img {
+    margin-bottom: 1rem;
+  }
+
+  .work__title {
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial__container {
+    width: 750px;
+  }
+
+  .testimonial__card {
+    padding: 1.5rem 2rem;
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(2, 430px);
+ 
